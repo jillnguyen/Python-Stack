@@ -1,0 +1,35 @@
+#left {
+    width: 700px;
+    display: inline-block;
+    border-right: 2px solid salmon;
+    vertical-align: top;
+}
+
+#right {
+    width: 450px;
+    display: inline-block
+}
+
+.frm {
+    display: inline-block;
+    width: 150px;
+    
+}
+
+.btn {
+    width: 80px;
+    background-color: grey;
+}
+
+.loss {
+    color: red
+}
+.gain {
+    color: green
+}
+
+#log {
+    height: 200px;
+    overflow: scroll;
+}
+

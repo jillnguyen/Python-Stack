@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css">
+    <title>Ninja Money</title>
+</head>
+<body>
+    <p>Your Gold: {{mygold}}</p>
+    <div id="stop">
+        <div class="stops">
+            <h2>Farm</h2>
+            <p>(earns 10-20 golds)</p>
+            <form action="/process_money" method="POST">
+                <input type="submit" placeholder="Find Gold" value="farm" name="action"> 
+            </form>
+        </div>
+        <div class="stops">
+            <h2>Cave</h2>
+            <p>(earns 10-20 golds)</p>
+            <form action="/process_money" method="POST">
+                <input type="submit" placeholder="Find Gold" value="cave" name="action">
+            </form>
+        </div>
+        <div class="stops">
+            <h2>House</h2>
+            <p>(earns 2-5 golds)</p>
+            <form action="/process_money" method="POST">
+                <input type="submit" placeholder="Find Gold" value="house" name="action">
+            </form>
+        </div>
+        <div class="stops">
+            <h2>Casino</h2>
+            <p>(earns or takes 0-50 golds)</p>
+            <form action="/process_money" method="POST">
+                <input type="submit" placeholder="Find Gold" value="casino" name="action">
+            </form>
+        </div>
+    </div>    
+    <p>Activities:</p>
+    <div id="activities">        
+        {% for mylog in session['mylog'] %}
+            <p>{{mylog}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

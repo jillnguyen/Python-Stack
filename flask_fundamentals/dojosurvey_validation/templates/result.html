@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+    {% wih messages = get_flashed_message() %}
+        {% if messages %}
+            {% for message in messages%}
+                <p>{{message}}</p>
+            {% endfor %}
+        {%endif%}
+    {%endwith%}
+    <h1>Submitted Info</h1>
+    <p> Name: {{name}}</p>
+    <p> Location: {{location}}</p>
+    <p> Favourite Language: {{language}}</p>
+    <p> Comment: {{comment}}</p>
+    <a href="/">GO BACK</a>
+</body>
+</html>

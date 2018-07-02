@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    {% if messages %}:
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Alias:</td>
+                <td><input type="text" name="alias"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            * Password should be at least 8 characters
+            <tr>
+                <td>Confirm PW:</td>
+                <td><input type="password" name="cfpw"></td>
+            </tr>
+            
+        </table>
+        <input type="submit" value="Register">                
+    </form>    
+
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

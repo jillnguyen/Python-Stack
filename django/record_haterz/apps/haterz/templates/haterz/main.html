@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Hello, {{user.first_name}}</h3>
+    <h3>Add a Record:</h3>
+    <form action="/add" method="POST">
+        {% csrf_token %}
+        Artist: <input type="text" name="artist">
+        Album: <input type="text" name="album">
+        Label: <input type="text" name="label">
+        <input type="submit" value="Add">
+    </form>    
+    <h3>My records</h3>
+    <table>
+        <tr>
+            <td>Artist</td>
+            <td>Album</td>
+            <td>Label</td>
+            <td>Actions</td>
+        </tr>
+        {% for record in my_records %}
+        <tr>
+            <td>{{record.artist}}</td>
+            <td>{{record.album}}</td>
+            <td>{{record.label}}</td>
+            <td><a href="/edit/{{record.id}}">Edit</a> | <a href="/delete/{{record.id}}">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    
+    
+    
+    
+    
+    <h3>All records</h3>
+    <table>
+        <tr>
+            <td>Artist</td>
+            <td>Album</td>
+            <td>Label</td>
+            <td>Actions</td>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{record.artist}}</td>
+            <td>{{record.album}}</td>
+            <td>{{record.label}}</td>
+            <td><a href="/edit/{{record.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

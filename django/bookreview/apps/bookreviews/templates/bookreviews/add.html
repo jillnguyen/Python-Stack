@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Books and Review</title>
+</head>
+<body>
+    <h1>Add a New Book and a Review</h1>
+    <form action="/add" method="POST">
+    {% csrf_token %}
+        <p>Book Title: <input type="text" name="title"></p>
+        <p>Author: <input type="text" name="author"></p>
+        <p>Review: <input type="textarea" name="review"></p>
+        <p>Rating: <input type="text" name="rating"></p>
+        <input type="submit" value="Add Book and Review">
+    </form>
+</body>
+</html>

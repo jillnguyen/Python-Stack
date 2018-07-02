@@ -1,0 +1,22 @@
+* {
+    width: 970px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.stop {
+    margin-top: 20px;
+    display: inline-block;
+    border: 2px solid green;
+    text-align: center;
+    width: 240px;
+    margin: 5px 5px;
+}
+
+#activities {
+    border:2px solid green;
+    height: 100px;
+    width: 950px;
+}
+

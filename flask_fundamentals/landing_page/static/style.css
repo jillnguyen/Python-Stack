@@ -1,0 +1,17 @@
+*{
+    width: 970px;
+    margin: 0 auto;
+    color: green;
+    background-color: lightgray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: darkred;
+}
+
+input {
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
+}
